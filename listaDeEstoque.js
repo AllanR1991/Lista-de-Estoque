@@ -120,6 +120,10 @@ function exibirItens(){
         
         //Adicionando atributos
         linha.setAttribute('id','linha')
+
+        //Adicionando evento
+        botaoEditar.setAttribute('onclick','editar()')       
+        botaoExcluir.setAttribute('onclick','excluir(this)')
         
         
         //Populando cada elemento criado
@@ -131,6 +135,7 @@ function exibirItens(){
         botaoEditar.textContent = 'Editar'
         botaoExcluir.textContent = 'Excluir'
         
+                
         editar.appendChild(botaoEditar)
         excluir.appendChild(botaoExcluir)
         
@@ -143,3 +148,8 @@ function exibirItens(){
 }
 
 exibirItens()
+
+//Função excluir
+function excluir(id){
+    id.parentElement.parentElement.remove()
+}
